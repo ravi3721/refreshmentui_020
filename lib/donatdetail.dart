@@ -7,7 +7,7 @@ class detaildonat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   Widget titleSection = Container(
+    Widget titleSection = Container(
       padding: const EdgeInsets.all(30),
       child: Row(
         children: [
@@ -19,13 +19,9 @@ class detaildonat extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 1),
                   child: const Text(
                     'DONAT STROWBERI',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                   ),
                 ),
-                
               ],
             ),
           ),
@@ -35,55 +31,113 @@ class detaildonat extends StatelessWidget {
 
     Color color = Theme.of(context).primaryColor;
 
-   
-
     Widget textSection = Container(
       padding: const EdgeInsets.all(32),
       child: const Text(
         'rasa manis karamel dan sedikit asam dari stroberi yang bercampur menghasilkan citarasa yang meleleh didalam mulut! ',
         textAlign: TextAlign.justify,
-        style: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w500
-        ),
+        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
       ),
     );
 
-    return
-      
-       Scaffold(
-        appBar: AppBar(
+    return Scaffold(
+      appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop(Homepage());
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            ),
-            ),
-      ),
-        body: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset(
-                'asset/donat-stoberi.png',
-                width: 300,
-                height: 300,
-                fit: BoxFit.cover,
-              ),
-            ),
-            titleSection,
-            
-            textSection,
-          ],
+          onPressed: () {
+            Navigator.of(context).pop(Homepage());
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
         ),
-      );
-    
-  }
+      ),
+      body: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(
+              'asset/donat-stoberi.png',
+              width: 300,
+              height: 300,
+              fit: BoxFit.cover,
+            ),
+          ),
+          titleSection,
+          textSection,
+          SizedBox(
+            height: 30,
+          ),
+          // ingridiens
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "INGRIDIENS :",
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black),
+                ),
+                Text('Tepung, Karamel, Stroberi, gula, telur, DLL.')
+              ],
+            ),
+          ),
 
-  
+          SizedBox(
+            height: 180,
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+                height: 70,
+                padding: const EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.black)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "\$2",
+                      style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    ),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Tidak Termasuk Biaya Pengiriman",
+                            style: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            "ADD",
+                            style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                decoration: TextDecoration.underline),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                )),
+          )
+        ],
+      ),
+    );
+  }
 }

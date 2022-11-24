@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       routes: {
-        "/": (context) => Homepage(),
-        "detaildonat": (context) => detaildonat()
+        "/": (context) => const Homepage(),
+        "detaildonat": (context) => const detaildonat()
       },
     );
   }
