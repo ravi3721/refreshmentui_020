@@ -105,7 +105,7 @@ class detaildonat extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "\$2",
+                      "\$2 | \$2",
                       style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -123,7 +123,7 @@ class detaildonat extends StatelessWidget {
                                 color: Colors.black),
                           ),
                           Text(
-                            "ADD",
+                            "Add To Chart",
                             style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,

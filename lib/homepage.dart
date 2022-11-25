@@ -42,7 +42,7 @@ class _HomepageState extends State<Homepage> {
                   textBaseline: TextBaseline.alphabetic,
                   children: const [
                     Text(
-                      'I Want to',
+                      'I Want to ',
                       style: TextStyle(
                           fontSize: 30,
                           fontFamily: 'poppins',
@@ -62,6 +62,7 @@ class _HomepageState extends State<Homepage> {
               const SizedBox(
                 height: 15.0,
               ),
+
               // kategori
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -82,9 +83,11 @@ class _HomepageState extends State<Homepage> {
                   ],
                 ),
               ),
+
               const SizedBox(
                 height: 20.0,
               ),
+
               Row(children: [
                 Expanded(
                   child: menucontainer('asset/donat-stoberi.png',
@@ -107,6 +110,55 @@ class _HomepageState extends State<Homepage> {
                   // const itemwidget()
                 ),
               ]),
+
+              const SizedBox(
+                height: 20.0,
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                    height: 70,
+                    padding: const EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.black)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "1 item | \$2",
+                          style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Tidak Termasuk Biaya Pengiriman",
+                                style: const TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Text(
+                                "View Chart",
+                                style: const TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    )),
+              )
             ],
           ),
         ));
@@ -152,50 +204,47 @@ class _menucontainerState extends State<menucontainer>
       decoration: BoxDecoration(
           color: widget.bgmenu, borderRadius: BorderRadius.circular(10)),
       margin: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      child: Column(
-        children: [
-          Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-            Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: Colors.lightBlue,
-                  borderRadius: BorderRadius.circular(20)),
-              child: Text(
-                "\$2",
-                style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-          ]),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, "detaildonat");
-            },
-            child: Container(
-              margin: EdgeInsets.all(20),
-              child: Image(
-                height: 140,
-                fit: BoxFit.fitHeight,
-                image: AssetImage(widget.gambar),
-              ),
+      child: Column(children: [
+        Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+          Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                color: Colors.lightBlue,
+                borderRadius: BorderRadius.circular(20)),
+            child: Text(
+              "\$2",
+              style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
             ),
           ),
-          Text(
-            widget.judul,
-            style:
-                GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.w600),
+        ]),
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, "detaildonat");
+          },
+          child: Container(
+            margin: EdgeInsets.all(20),
+            child: Image(
+              height: 140,
+              fit: BoxFit.fitHeight,
+              image: AssetImage(widget.gambar),
+            ),
           ),
-          Text(
-            'DONKINS',
-            style:
-                GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w300),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        ),
+        Text(
+          widget.judul,
+          style: GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.w500),
+        ),
+        Text(
+          'DONKINS',
+          style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w300),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 GestureDetector(
@@ -211,8 +260,8 @@ class _menucontainerState extends State<menucontainer>
                   child: Lottie.network(
                       'https://assets10.lottiefiles.com/datafiles/r4svAEpkQFrmcdIT0N3sEnH7D72XDnuPcEfHteYT/Twitter Favorite Heart.json',
                       controller: _controller,
-                      width: 150,
-                      height: 150),
+                      width: 90,
+                      height: 90),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -227,22 +276,19 @@ class _menucontainerState extends State<menucontainer>
                   child: Lottie.network(
                       'https://assets2.lottiefiles.com/packages/lf20_ghetz8rv.json',
                       controller: _controller,
-                      width: 100,
-                      height: 100),
+                      width: 50,
+                      height: 50),
                 ),
-
-                // Text(
-                //   'ADD',
-                //   style: GoogleFonts.poppins(
-                //       fontSize: 18,
-                //       fontWeight: FontWeight.bold,
-                //       decoration: TextDecoration.underline),
-                // )
-              ],
-            ),
-          )
-        ],
-      ),
+                Text(
+                  'ADD',
+                  style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline),
+                ),
+              ]),
+        ),
+      ]),
     );
   }
 }
